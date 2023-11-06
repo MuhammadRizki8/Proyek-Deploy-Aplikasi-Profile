@@ -1,0 +1,500 @@
+$first-color: #072227;
+$second-color: #35858b;
+$third-color: #4fbdba;
+$fourth-color: #aefeff;
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ====================HEADER======================= */
+.jumbotron-nav {
+  font-size: 20px;
+  background-color: whitesmoke;
+  color: $second-color;
+  padding: 10px 50px;
+}
+
+.jumbotron-nav h1 {
+  font-weight: 800;
+  margin: 0;
+}
+
+.jumbotron-nav p {
+  margin: 0;
+}
+.topnav {
+  overflow: hidden;
+  background-color: rgba(0, 157, 152, 0.5);
+  padding: 0px 36px;
+  display: flex;
+}
+
+.topnav a {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav .icon {
+  display: none;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.sticky + main {
+  padding-top: 60px;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav {
+    display: flex;
+    flex-direction: column;
+  }
+  .topnav a.icon {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .jumbotron-nav {
+    text-align: center;
+  }
+  .jumbotron-nav h1 {
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .jumbotron-nav p {
+    font-size: 13px;
+  }
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    display: block;
+    text-align: left;
+  }
+  .tambahan input {
+    width: 100%;
+  }
+  .tambahan textarea {
+    width: 100%;
+  }
+  .tambahan h1 {
+    font-size: 20px;
+  }
+  .tambahan button {
+    width: 100%;
+  }
+}
+
+/* ====================HEADER======================= */
+
+.jumbotron {
+  background-image: url('../img/pola1.jpg');
+  // background-repeat: repeat;
+  background-size: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 70px 0px;
+  color: $second-color;
+  img {
+    width: 200px;
+    border-radius: 50%;
+  }
+  .text-jumbtrn {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .head-about-me {
+    width: 100%;
+    margin-bottom: 50px;
+    background-color: $third-color;
+    padding: 100px;
+    h1 {
+      text-align: center;
+      font-size: 50px;
+      font-weight: 500;
+      margin: 0 auto;
+      color: white;
+    }
+  }
+
+  .text-about-me {
+    width: 70%;
+    column-gap: 50px;
+    display: grid;
+    grid-template-areas:
+      'header header'
+      'isi1 isi2';
+    h2 {
+      grid-area: header;
+      text-align: center;
+    }
+    p #p1 {
+      grid-area: isi1;
+    }
+    p #p2 {
+      grid-area: isi2;
+    }
+    @media (max-width: 600px) {
+      width: 100%;
+      grid-template-areas:
+        'header'
+        'isi1'
+        'isi2';
+      padding: 50px;
+      h2 {
+        text-align: center;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .jumbotron {
+    margin-top: 30px;
+    img {
+      width: 100px;
+    }
+    .text-jumbtrn {
+      margin-top: 5px;
+    }
+  }
+
+  .about-me {
+    .head-about-me {
+      background-color: $third-color;
+      padding: 20px;
+      margin: 0px;
+      h1 {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 300;
+        margin: 0 auto;
+        color: white;
+      }
+    }
+  }
+}
+
+.my-education {
+  background-color: $third-color;
+  margin: 50px auto;
+  padding: 20px;
+  h2 {
+    text-align: center;
+    color: white;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .box {
+      width: 100%; /* Mengisi lebar layar penuh */
+      box-shadow: 0 4px 8px 2px rgba(7, 34, 39, 0.5);
+      background-color: white;
+      padding: 30px;
+      margin: 20px 0; /* Mengurangi margin vertikal */
+      color: $first-color;
+      text-align: center;
+      h4 {
+        color: $third-color;
+      }
+      img {
+        width: 170px;
+      }
+      p {
+        font-size: small;
+      }
+    }
+  }
+
+  @media (min-width: 850px) {
+    section {
+      flex-direction: row;
+      justify-content: space-around;
+      .box {
+        width: 30%; /* Mengisi 30% lebar layar */
+        margin: 0; /* Menghapus margin vertikal */
+      }
+    }
+  }
+}
+
+.my-skils {
+  width: 70%;
+  margin: 50px auto;
+  padding: 20px;
+  h2 {
+    color: $first-color;
+  }
+  .kotak {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+  }
+}
+
+.my-projects-contact {
+  display: flex;
+  width: 100%;
+  .projects {
+    padding: 40px;
+    width: 50%;
+    background-color: $third-color;
+    color: black;
+    text-align: center;
+    .galery {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr 1fr;
+      .projects-n {
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        background: rgb(255, 255, 255);
+        background: rgba(103, 255, 222, 0.5); /* Black see-through */
+        a {
+          color: #141414;
+          text-decoration: none;
+          font-size: 20px;
+          font-weight: 900;
+        }
+
+        width: 100%;
+        transition: 0.5s ease;
+        opacity: 0;
+        color: white;
+
+        padding: 20px;
+        text-align: center;
+      }
+      .projects-n:hover .overlay {
+        opacity: 1;
+      }
+    }
+    @media (max-width: 850px) {
+      .galery {
+        gap: 5px;
+        grid-template-columns: 1fr 1fr;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .contact {
+    background-color: $first-color;
+    padding: 40px;
+    width: 50%;
+    color: white;
+    h2 {
+      text-align: center;
+      color: $fourth-color;
+    }
+    .isi_contact {
+      display: flex;
+      justify-content: center;
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+      }
+      .sosmed {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+
+        a {
+          color: whitesmoke; /* Warna ikon */
+          transition: color 0.3s ease; /* Animasi perubahan warna */
+        }
+
+        a:hover {
+          color: $third-color; /* Warna ikon saat dihover */
+        }
+
+        i {
+          font-size: 48px;
+          margin: 20px;
+          transition: transform 0.3s ease; /* Animasi membesar saat dihover */
+        }
+
+        i:hover {
+          transform: scale(1.2); /* Membesarkan ikon saat dihover */
+        }
+        @media screen and (max-width: 800px) {
+          flex-direction: row;
+          justify-content: space-between;
+          i {
+            font-size: 20px;
+            margin: 10px;
+          }
+        }
+      }
+
+      .form {
+        width: 80%;
+        table tr td {
+          padding: 10px;
+          margin: 10px;
+        }
+        @media screen and (max-width: 800px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .jumbotron {
+    margin-top: 30px;
+    img {
+      width: 100px;
+    }
+    .text-jumbtrn {
+      margin-top: 5px;
+    }
+  }
+
+  .about-me {
+    .head-about-me {
+      background-color: $third-color;
+      padding: 20px;
+      margin: 0px;
+      h1 {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 300;
+        margin: 0 auto;
+        color: white;
+      }
+    }
+  }
+  .my-education {
+    margin: 20px 0;
+  }
+  .my-skils {
+    width: 100%;
+    margin: 50px auto;
+    padding: 10px;
+    h2 {
+      color: $first-color;
+    }
+    .kotak {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: start;
+    }
+    .list {
+      font-size: 12px;
+      margin: 5px;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: $second-color;
+  color: white;
+}
+
+input[type='text'],
+select,
+textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type='submit'] {
+  background-color: $second-color;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  &:hover {
+    background-color: $third-color;
+  }
+}
+
+#btn-to-top {
+  display: none;
+  position: fixed;
+  background-color: $first-color;
+  color: $fourth-color;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 0.6em;
+  bottom: 20px;
+  right: 30px;
+  z-index: 100;
+  font-size: 12px;
+  font-style: none;
+  border: none;
+  border: 2px solid #232323;
+}
+@media screen and (max-width: 1000px) {
+  #btn-to-top {
+    transform: scale(0.8);
+  }
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
